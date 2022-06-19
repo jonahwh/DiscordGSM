@@ -358,7 +358,7 @@ class DiscordGSM():
             players = "?"
             bots = None
 
-        return f'{players}({bots})/{maxplayers}' if bots is not None and bots > 0 else f'{players}/{maxplayers}'
+        return f'{players - bots}({bots})/{maxplayers}' if bots is not None and bots > 0 else f'{players}/{maxplayers}'
 
 client = commands.Bot(command_prefix=PREFIX)
 
