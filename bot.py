@@ -251,7 +251,7 @@ class DiscordGSM():
                 else False)
 
             title = self.get_value(server, "title") or self.get_value(data, "game") or self.get_value(server, "game")
-            title = f':lock: {title}' if lock else  f':unlock: {title}'
+            # title = f':lock: {title}' if lock else  f':unlock: {title}'
             
             description = self.get_value(server, "custom")
             
