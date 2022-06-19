@@ -312,7 +312,7 @@ class DiscordGSM():
             if image_url:
                 embed.set_thumbnail(url=image_url)
 
-            embed.set_footer(text=f'DiscordGSM v.{VERSION} | Game Server Monitor | {FIELD_LASTUPDATE}: <t:{time.time()}:R>{SPACER}', icon_url=CUSTOM_IMAGE_URL)
+            embed.set_footer(text=f'DiscordGSM v.{VERSION} | Game Server Monitor | {FIELD_LASTUPDATE}: <t:{int(time.time())}:R>{SPACER}', icon_url=CUSTOM_IMAGE_URL)
         except Exception as e:
             self.print_to_console(f'Error Building embed.\n{e}')
 
