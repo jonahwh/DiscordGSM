@@ -292,11 +292,11 @@ class DiscordGSM():
             if country:
                 embed.add_field(name=FIELD_COUNTRY, value=f':flag_{country.lower()}:', inline=True)
             if map and not country:
-                embed.add_field(name=SPACER, value=SPACER, inline=True)
+                # embed.add_field(name=SPACER, value=SPACER, inline=True)
             if map:
                 embed.add_field(name=FIELD_CURRENTMAP, value=map, inline=True)
             if map or country:
-                embed.add_field(name=SPACER, value=SPACER, inline=True)
+                # embed.add_field(name=SPACER, value=SPACER, inline=True)
 
             if steam_id:
                 if direct_join:
