@@ -259,7 +259,7 @@ class DiscordGSM():
                 else f':red_circle: **{FIELD_OFFLINE}**' if cache_status == "Offline" and data is not False 
                 else f':yellow_circle: **{FIELD_UNKNOWN}**')
 
-            hostname = self.get_value(server, "hostname") or self.get_value(data, "name") or SPACER
+            hostname = SPACER #self.get_value(server, "hostname") or self.get_value(data, "name") or SPACER
             players_string = self.determinePlayerString(server, data, cache_status)   
             port = self.get_value(data, "port")
             address = self.get_value(server, "public_address") or self.get_value(data, "address") and port and f'{self.get_value(data, "address")}:{port}' or SPACER
