@@ -90,11 +90,11 @@ class DiscordGSM():
         print(f'Owner ID:\t{app_info.owner.id} ({app_info.owner.name})')
         print(f'Invite Link: \t{invite_link}')
         print("----------------")
-        print(f'Querying {self.servers.get_distinct_server_count()} servers and updating {len(self.server_list)} messages every {REFRESH_RATE} minutes.')
+        print(f'Querying {self.servers.get_distinct_server_count()} servers and updating {len(self.server_list)} messages every {REFRESH_RATE} seconds.')
         print("----------------\n")
         self.presence_load.start()
 
-    @tasks.loop(minutes=REFRESH_RATE)
+    @tasks.loop(seconds=REFRESH_RATE)
     async def update_messages(self):
         await self.query_servers()
         updated_count = 0
