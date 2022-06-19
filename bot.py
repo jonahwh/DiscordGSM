@@ -279,10 +279,10 @@ class DiscordGSM():
                 else discord.Embed(title=title, color=color))
 
             embed.add_field(name=FIELD_STATUS, value=status, inline=True)
+            embed.add_field(name=FIELD_ADDRESS, value=f'`{address}`', inline=True)
             # embed.add_field(name=FIELD_NAME, value=hostname, inline=True)
             embed.add_field(name=SPACER, value=SPACER, inline=True)
-            embed.add_field(name=FIELD_PLAYERS, value=players_string, inline=True)
-            embed.add_field(name=FIELD_ADDRESS, value=f'`{address}`', inline=True)
+            embed.add_field(name=FIELD_PLAYERS, value=players_string, inline=True)            
     
             if password is None:
                 embed.add_field(name=SPACER, value=SPACER, inline=True)
