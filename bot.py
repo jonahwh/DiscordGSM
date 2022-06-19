@@ -58,6 +58,7 @@ FIELD_JOIN = os.getenv("DGSM_FIELD_JOIN") or "Join Server"
 FIELD_LAUNCH = os.getenv("DGSM_FIELD_LAUNCH") or "Launch Game"
 SPACER=u"\u200B"
 
+
 class DiscordGSM():
     def __init__(self, client):
 
