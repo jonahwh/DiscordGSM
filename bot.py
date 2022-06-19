@@ -4,7 +4,6 @@ import requests
 import base64
 from datetime import datetime
 import time
-import dateutil
 
 # discord
 import discord
@@ -297,7 +296,9 @@ class DiscordGSM():
             if map:
                 embed.add_field(name=FIELD_CURRENTMAP, value=map, inline=True)
             if map or country:
-                # embed.add_field(name=SPACER, value=SPACER, inline=True)
+                embed.add_field(name=SPACER, value=SPACER, inline=True)
+
+            embed.add_field(name=FIELD_LASTUPDATE, value=f'<t:{int(time.time())}:R>{SPACER}', inline=True)
 
             if steam_id:
                 if direct_join:
@@ -313,8 +314,6 @@ class DiscordGSM():
 
             if image_url:
                 embed.set_thumbnail(url=image_url)
-
-            embed.set_footer(text=f'DiscordGSM v.{VERSION} | Game Server Monitor | {FIELD_LASTUPDATE}: <t:{int(time.time())}:R>{SPACER}', icon_url=CUSTOM_IMAGE_URL)
         except Exception as e:
             self.print_to_console(f'Error Building embed.\n{e}')
 
