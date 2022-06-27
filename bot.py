@@ -177,12 +177,14 @@ class DiscordGSM():
         if PRESENCE_TYPE <= 1:
             activity_text = f'{self.servers.get_distinct_server_count()} game servers'
         elif PRESENCE_TYPE == 2:
-            total_activeplayers = total_maxplayers = 0
+            total_activeplayers = total_maxplayers = total_bots = 0          
             for server in self.server_list:
                 server_cache = ServerCache(server["address"], server["port"])
                 data = server_cache.get_data()
                 if data and server_cache.get_status() == "Online":
-                    total_activeplayers += int(data["players"])
+                    bots = int(data["bots"])
+                    total_bots += bots
+                    total_activeplayers += int(data["players"] - bots)
                     total_maxplayers += int(data["maxplayers"])
                   
             activity_text = f'{total_activeplayers}/{total_maxplayers} active players' if total_maxplayers > 0 else "0 players" 
