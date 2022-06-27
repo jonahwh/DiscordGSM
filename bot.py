@@ -187,7 +187,7 @@ class DiscordGSM():
                     total_activeplayers += int(data["players"] - bots)
                     total_maxplayers += int(data["maxplayers"])
                   
-            activity_text = f'{total_activeplayers}/{total_maxplayers} active players' if total_maxplayers > 0 else "0 players" 
+            activity_text = f'{total_activeplayers}({bots})/{total_maxplayers} active players' if total_maxplayers > 0 else "0 players" 
         elif PRESENCE_TYPE >= 3:
             if self.current_display_server >= len(self.server_list):
                 self.current_display_server = 0
